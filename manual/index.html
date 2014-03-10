@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Manual</title>
+</head>
+<body>
+<h1><strong>WITCH-E Manual</strong></h1><h2>Table Of Contents:</h2></p>
+<table width="100%" border="0" cellpadding="3">
+  <tr>
+    <td width="93%"><a href="#c1">Basics of Instructions</a></td>
+    <td width="7%"><div align="right">1</div></td>
+  </tr>
+  <tr>
+    <td><a href="#c2">Information About Addresses and Stores</a></td>
+    <td><div align="right">2</div></td>
+  </tr>
+  <tr>
+    <td><a href="#c3">Adding and Clearing to Stores</a></td>
+    <td><div align="right">3</div></td>
+  </tr>
+  <tr>
+    <td><a href="#c4">Arithmetic</a></td>
+    <td><div align="right">4</div></td>
+  </tr>
+  
+</table>
+
+<h2 id="c1">Chapter 1: Basics of Instructions</h2>
+
+<p>Instructions are made by using 3, 5, or 14 characters in one big clump. Commands are seperated by a space, and 14 digit commands are not seperated. Examples are 10110+00000000, 409, 209, 11020, and 31050. An example sequence of commands would be 209 210 220 10110+90000000 10150-10000000 11050. All instructions have 1 argument or more. in 209, 09 is an address argument. in 10110+00000000, 01, 10, and +00000000 are all arguments. In 11010, 10 and 10 are arguments. In this case they are addresses.</p>
+<p>&nbsp;</p>
+<h2 id="c2">Chapter 2: Information About Addresses and Stores</h2>
+<p>The stores:</p>
+<table width="100%" border="1" cellpadding="3">
+  <tr>
+    <td width="13%"><div align="center"><strong>Addresses</strong></div></td>
+    <td width="87%"><div align="center"><strong>What they are</strong></div></td>
+  </tr>
+  <tr>
+    <td>01</td>
+    <td>Tape reader 1</td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td>Tape reader 2 (not implemented yet)</td>
+  </tr>
+  <tr>
+    <td>03</td>
+    <td>Tape reader 3 (not implemented yet)</td>
+  </tr>
+  <tr>
+    <td>04</td>
+    <td>Tape reader 4 (not implemented yet)</td>
+  </tr>
+  <tr>
+    <td>05</td>
+    <td>Tape reader 5 (not implemented yet)</td>
+  </tr>
+  <tr>
+    <td>06</td>
+    <td>Tape reader 6 (not implemented yet)</td>
+  </tr>
+  <tr>
+    <td>07</td>
+    <td>Tape reader 7 (not implemented yet)</td>
+  </tr>
+  <tr>
+    <td>08</td>
+    <td>First 7 digits of accumulator (not implemented yet)</td>
+  </tr>
+  <tr>
+    <td>09</td>
+    <td>All digits of accumulator</td>
+  </tr>
+  <tr>
+    <td>10-99</td>
+    <td>Memory Stores</td>
+  </tr>
+</table>
+<p>Every storage place is exactly 9 digits, with one being a + or - sign.You cannot write to any tape readers, but you can read from tape readers. More on that in the next section. Memory stores are where your numbers go for storage. When you restart the WITCH-E, those numbers will go away. This is because the number storage units (also called dekatrons) hae no power.</p>
+<p>&nbsp;</p>
+<h2 id="c3">Chapter 3: Adding and Clearing to Stores</h2>
+<p>To add a number to a store, type 101 + the number of store that is not a tape reader, then + or - and an 8 digit number. The 8 digit number has to have zeros beffore it if it wasn't originally there. For example, 10110+00000000 would work, but 10110 2000000 would not work. It would not work because it is not an 8 digit number, it has a space between the command and the values, and the value does not have a + or - sign. The version of this command that would work would be 10110+02000000. This also works with a 3 instead of a 1. Here's an example: 30110+55555555. Clearing the store is required before setting it. To clear a store, type 2 or 4 + the address number of the store. An example is 409 or 255.</p>
+<p>&nbsp;</p>
+<h2 id="c4">Chapter 4: Arithmetic</h2>
+<p>1, 2, 3, and 4 as orders can be used for another purpose too. They can be used for arithmetic. To add, the accumulator must be cleared and the stores to add from must have assigned values. The command is 1 or 2 + store 1 + store 2. An example is 11020 or 22020. To subtract, the command is 3 or 4 + store 1 + store 2. Store 2 is subtracted from store 1. An example is 31050 or 41930. The accumulator will be filled for both of these, and you can clear the accumulator with 209 or 409.</p>
+</body>
+</html>
